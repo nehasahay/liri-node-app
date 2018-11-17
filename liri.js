@@ -1,7 +1,7 @@
 "use strict";
 
 require("dotenv").config();
-const request = require("request");
+const axios = require("axios");
 const moment = require("moment");
 const fs = require("fs");
 const Spotify = require("node-spotify-api");
@@ -14,7 +14,7 @@ const input = process.argv.slice(3).join(" ");
  * Outputs results to both the console and a log file
  */
 (() => {
-    let trueLog = console.log;
+    const trueLog = console.log;
     // Appends the command given
     fs.appendFile("log.txt", `node liri.js ${operation} ${input}\n`, err => {
         if (err) {
@@ -37,20 +37,20 @@ const input = process.argv.slice(3).join(" ");
  * node liri.js concert-this <artist/band name here>
  */
 const concertThis = artist => {
-    request(`https://rest.bandsintown.com/artists/${artist}/events?app_id=codingbootcamp`, (error, response, body) => {
-        if (!error && response.statusCode === 200) {
-            // Exits the function if no events were found
-            if (!JSON.parse(body).length) {
-                return console.log("No concerts found!\n" + "-".repeat(80));
-            };
-            JSON.parse(body).forEach(event => {
-                console.log("-".repeat(80));
-                console.log(`Venue: ${event.venue.name}`);
-                console.log(`Location: ${event.venue.city}, ${event.venue.region ? event.venue.region : event.venue.country}`);
-                console.log(`Date: ${moment(event.datetime).format("MM/DD/YYYY")}`);
-            });
-            console.log("-".repeat(80));
+    axios.get(`https://rest.bandsintown.com/artists/${artist}/events?app_id=codingbootcamp`).then(response => {
+        // Exits the function if no events were found
+        if (!response.data.length) {
+            return console.log("No concerts found!\n" + "-".repeat(80));
         };
+        response.data.forEach(event => {
+            console.log("-".repeat(80));
+            console.log(`Venue: ${event.venue.name}`);
+            console.log(`Location: ${event.venue.city}, ${event.venue.region ? event.venue.region : event.venue.country}`);
+            console.log(`Date: ${moment(event.datetime).format("MM/DD/YYYY")}`);
+        });
+        console.log("-".repeat(80));
+    }).catch(err => {
+        console.log(err);
     });
 };
 
@@ -60,7 +60,10 @@ const concertThis = artist => {
  */
 const spotifyThisSong = song => {
     song = song || "The Sign by Ace of Base";
-    spotify.search({ type: "track", query: song }, (err, data) => {
+    spotify.search({
+        type: "track",
+        query: song
+    }, (err, data) => {
         if (err) {
             return console.log(err);
         };
@@ -84,19 +87,19 @@ const spotifyThisSong = song => {
  */
 const movieThis = movie => {
     movie = movie || "Mr. Nobody";
-    request(`http://www.omdbapi.com/?t=${movie}&apikey=trilogy`, (error, response, body) => {
-        if (!error && response.statusCode === 200) {
-            console.log("-".repeat(80));
-            console.log(`Title: ${JSON.parse(body).Title}`);
-            console.log(`Year: ${JSON.parse(body).Year}`);
-            console.log(`IMDB: ${JSON.parse(body).Ratings[0] ? JSON.parse(body).Ratings[0].Value : "N/A"}`);
-            console.log(`Rotten Tomatoes: ${JSON.parse(body).Ratings[1] ? JSON.parse(body).Ratings[1].Value : "N/A"}`);
-            console.log(`Country movie was produced: ${JSON.parse(body).Country}`);
-            console.log(`Language: ${JSON.parse(body).Language}`);
-            console.log(`Plot: ${JSON.parse(body).Plot}`);
-            console.log(`Actors: ${JSON.parse(body).Actors}`);
-            console.log("-".repeat(80));
-        };
+    axios.get(`http://www.omdbapi.com/?t=${movie}&apikey=trilogy`).then(response => {
+        console.log("-".repeat(80));
+        console.log(`Title: ${response.data.Title}`);
+        console.log(`Year: ${response.data.Year}`);
+        console.log(`IMDB: ${response.data.Ratings[0] ? response.data.Ratings[0].Value : "N/A"}`);
+        console.log(`Rotten Tomatoes: ${response.data.Ratings[1] ? response.data.Ratings[1].Value : "N/A"}`);
+        console.log(`Country movie was produced: ${response.data.Country}`);
+        console.log(`Language: ${response.data.Language}`);
+        console.log(`Plot: ${response.data.Plot}`);
+        console.log(`Actors: ${response.data.Actors}`);
+        console.log("-".repeat(80));
+    }).catch(err => {
+        console.log(err);
     });
 };
 
@@ -111,9 +114,15 @@ const doWhatItSays = () => {
         };
         const dataArr = data.split(",");
         const functionList = {
-            "concert-this": artist => { concertThis(artist) },
-            "spotify-this-song": song => { spotifyThisSong(song) },
-            "movie-this": movie => { movieThis(movie) }
+            "concert-this": artist => {
+                concertThis(artist);
+            },
+            "spotify-this-song": song => {
+                spotifyThisSong(song);
+            },
+            "movie-this": movie => {
+                movieThis(movie);
+            }
         };
         functionList[dataArr[0]](dataArr[1]);
     });
