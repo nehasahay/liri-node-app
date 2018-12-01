@@ -16,7 +16,7 @@ const input = process.argv.slice(3).join(" ");
 (() => {
     const trueLog = console.log;
     // Appends the command given
-    fs.appendFile("log.txt", `node liri.js ${operation} ${input}\n`, err => {
+    fs.appendFile("log.txt", `\n\nnode liri.js ${operation} ${input}\n`, err => {
         if (err) {
             return trueLog(err);
         };
