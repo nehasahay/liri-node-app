@@ -3,7 +3,7 @@ LIRI is a command line interface that searches Spotify for songs, Bands in Town 
 
 
 ## Running the Application
-You will need Node.js to install the required node modules with `npm install`. Afterwards, you'll have to create an `.env` file with your own Spotify API keys, like so:
+You will need Node.js to install the required node modules with `npm install`. Afterwards, you'll have to create a `.env` file with your own Spotify API keys, like so:
 
 ```js
 # Spotify API keys
