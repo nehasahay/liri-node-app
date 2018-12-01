@@ -5,15 +5,7 @@ Invalid syntax! The following operations are supported:
    * node liri.js do-what-it-says
 
 
-node liri.js undefined 
-Invalid syntax! The following operations are supported:
-   * node liri.js concert-this <artist/band name here>
-   * node liri.js spotify-this-song '<song name here>'
-   * node liri.js movie-this '<movie name here>'
-   * node liri.js do-what-it-says
-
-
-node liri.js undefined 
+node liri.js  
 
 
 node liri.js concert-this Florence and the Machine
@@ -228,6 +220,21 @@ Song: The Sign (Karaoke Version) [Originally Performed By Ace Of Base]
 Preview: https://p.scdn.co/mp3-preview/d14ae51215b279ed2fb18a0dd6bd939aa6ae8f30?cid=e86ec748bfe340bf9b69b90ca1cb2574
 Album: The Best Of Ace Of Base (Karaoke Version)
 --------------------------------------------------------------------------------
+Artist: Roq Star Karaoke
+Song: The Sign (Originally Performed by Ace Of Base) - Karaoke Version
+Preview: https://p.scdn.co/mp3-preview/40db9e5358e47bbff74f246c5fadfa47273e726e?cid=e86ec748bfe340bf9b69b90ca1cb2574
+Album: Karaoke - Ace of Base
+--------------------------------------------------------------------------------
+Artist: Drunken Singers
+Song: The Sign (Karaoke Version) - Originally Performed By Ace of Base
+Preview: https://p.scdn.co/mp3-preview/f1c40057929377afddb719cc3396e81894ee7517?cid=e86ec748bfe340bf9b69b90ca1cb2574
+Album: Top Karaoke Hits of All Time, Vol. 3
+--------------------------------------------------------------------------------
+Artist: Albert 2 Stone
+Song: The Sign (Karaoke Version) - Originally Performed By Ace of Base
+Preview: https://p.scdn.co/mp3-preview/9f4a10846b5085e2adc4dac0caba26674ac75971?cid=e86ec748bfe340bf9b69b90ca1cb2574
+Album: Greatest Karaoke Hits, Vol. 121 (Karaoke Version)
+--------------------------------------------------------------------------------
 Artist: The Karaoke Crew
 Song: The Sign (As Made Famous by Ace of Base)
 Preview: https://p.scdn.co/mp3-preview/bf8a23ccd1a586e257521afbd9e28a281edb5446?cid=e86ec748bfe340bf9b69b90ca1cb2574
@@ -247,21 +254,6 @@ Artist: BFM Hits
 Song: The Sign (Originally Performed by Ace of Base) [Karaoke Version]
 Preview: https://p.scdn.co/mp3-preview/78d67fcd75cdd9706c615ae0327166a3d68c9fb5?cid=e86ec748bfe340bf9b69b90ca1cb2574
 Album: Karaoke: Pop Hits 1994, Vol. 2
---------------------------------------------------------------------------------
-Artist: Roq Star Karaoke
-Song: The Sign (Originally Performed by Ace Of Base) - Karaoke Version
-Preview: https://p.scdn.co/mp3-preview/40db9e5358e47bbff74f246c5fadfa47273e726e?cid=e86ec748bfe340bf9b69b90ca1cb2574
-Album: Karaoke - Ace of Base
---------------------------------------------------------------------------------
-Artist: Drunken Singers
-Song: The Sign (Karaoke Version) - Originally Performed By Ace of Base
-Preview: https://p.scdn.co/mp3-preview/f1c40057929377afddb719cc3396e81894ee7517?cid=e86ec748bfe340bf9b69b90ca1cb2574
-Album: Top Karaoke Hits of All Time, Vol. 3
---------------------------------------------------------------------------------
-Artist: Albert 2 Stone
-Song: The Sign (Karaoke Version) - Originally Performed By Ace of Base
-Preview: https://p.scdn.co/mp3-preview/9f4a10846b5085e2adc4dac0caba26674ac75971?cid=e86ec748bfe340bf9b69b90ca1cb2574
-Album: Greatest Karaoke Hits, Vol. 121 (Karaoke Version)
 --------------------------------------------------------------------------------
 Artist: Sing Fire Karaoke
 Song: The Sign (Karaoke Version) - Originally Performed By Ace of Base

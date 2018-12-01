@@ -7,8 +7,8 @@ const fs = require("fs");
 const Spotify = require("node-spotify-api");
 const keys = require("./keys.js");
 const spotify = new Spotify(keys.spotify);
-const operation = process.argv[2];
-const input = process.argv.slice(3).join(" ");
+const operation = process.argv[2] || "";
+const input = process.argv.slice(3).join(" ") || "";
 
 /**
  * Outputs results to both the console and a log file
