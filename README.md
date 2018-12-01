@@ -51,4 +51,4 @@ Reads from `random.txt` and executes one of the above commands. Currently runs `
 ## Output
 Sample output can be found in `log.txt`.
 
-![Screenshot](flow.gif)
+![user-flow-gif](flow.gif)
