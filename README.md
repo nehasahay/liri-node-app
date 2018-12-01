@@ -23,9 +23,9 @@ Searches the Bands in Town Events API for an artist, and displays the following 
 ### `node liri.js spotify-this-song <song name here>`
 Searches Spotify for a song, and shows the following information for each result:
    * Artist(s)
-   * The song's name
-   * A preview link of the song from Spotify
-   * The album that the song is from
+   * The song's title
+   * A preview link
+   * Album
 
 Defaults to "The Sign" by Ace of Base if no query is provided.
 
